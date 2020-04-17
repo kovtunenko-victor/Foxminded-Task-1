@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-public class AnagramMakerTest {
+class AnagramMakerTest {
    private final AnagramMaker anagramMaker = new AnagramMaker();
 
    @Test
-   public void makeAnagramShouldReturnSourceStringIfSentenceContainsOnlyNumbers() {
+   void makeAnagramShouldReturnSourceStringIfSentenceContainsOnlyNumbers() {
       String expected = "1234 5678";
       String actual = anagramMaker.makeAnagram("1234 5678");
 
@@ -17,7 +17,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldReturnRevertedSymbolsIfSentenceContainsOnlyLetterSymbols() {
+   void makeAnagramShouldReturnRevertedSymbolsIfSentenceContainsOnlyLetterSymbols() {
       String expected = "dcba hgfe";
       String actual = anagramMaker.makeAnagram("abcd efgh");
 
@@ -25,7 +25,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldReturnRevertedLetterSymbolsAndNonLetterStayedInPlaceIfSentenceContainsMixedLetterAndNonLetterSymbols() {
+   void makeAnagramShouldReturnRevertedLetterSymbolsAndNonLetterStayedInPlaceIfSentenceContainsMixedLetterAndNonLetterSymbols() {
       String expected = "d1cba hgf!e";
       String actual = anagramMaker.makeAnagram("a1bcd efg!h");
 
@@ -33,7 +33,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldReturnSourceSymbolIfSourceStringIsOneSymbol() {
+   void makeAnagramShouldReturnSourceSymbolIfSourceStringIsOneSymbol() {
       String expected = "a";
       String actual = anagramMaker.makeAnagram("a");
 
@@ -41,7 +41,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldReturnSourceStringIfWordContainsSameSymbols() {
+   void makeAnagramShouldReturnSourceStringIfWordContainsSameSymbols() {
       String expected = "aaaa";
       String actual = anagramMaker.makeAnagram("aaaa");
 
@@ -49,7 +49,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldReturnRevertedSymbolsIfWordContainsLetterSymbols() {
+   void makeAnagramShouldReturnRevertedSymbolsIfWordContainsLetterSymbols() {
       String expected = "abcd";
       String actual = anagramMaker.makeAnagram("dcba");
 
@@ -57,7 +57,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldReturnNotRevertedSymbolsIfWordContainsNonLetterSymbols() {
+   void makeAnagramShouldReturnNotRevertedSymbolsIfWordContainsNonLetterSymbols() {
       String expected = "!@#$%";
       String actual = anagramMaker.makeAnagram("!@#$%");
 
@@ -65,7 +65,7 @@ public class AnagramMakerTest {
    }
 
    @Test
-   public void makeAnagramShouldThrowExceptionIfSentenceIsEmptyString() {
+   void makeAnagramShouldThrowExceptionIfSentenceIsEmptyString() {
       Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
          anagramMaker.makeAnagram("");
       });
@@ -74,7 +74,7 @@ public class AnagramMakerTest {
    }
    
    @Test
-   public void makeAnagramShouldThrowExceptionIfSentenceConsistsOfTabulation() {
+   void makeAnagramShouldThrowExceptionIfSentenceConsistsOfTabulation() {
       Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
          anagramMaker.makeAnagram("    ");
       });
@@ -83,7 +83,7 @@ public class AnagramMakerTest {
    }
    
    @Test
-   public void makeAnagramShouldThrowExceptionIfSentenceIsNull() {
+   void makeAnagramShouldThrowExceptionIfSentenceIsNull() {
       Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
          anagramMaker.makeAnagram(null);
       });
